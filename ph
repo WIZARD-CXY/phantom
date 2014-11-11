@@ -15,7 +15,7 @@ f_create_bridges_with_default_flows() {
     ovs-vsctl add-br $BR_INT
     ovs-vsctl add-br $BR_TUN
     ovs-vsctl set-manager pssl:6640
-    ovs-vsctl set-controller $BR_TUN pssl:6634
+    ovs-vsctl set-controller $BR_TUN tcp:6633
     ovs-vsctl set bridge $BR_TUN protocols=OpenFlow13
     ovs-vsctl add-port $BR_INT patch-tun -- set interface patch-tun type=patch options:peer=patch-int
     ovs-vsctl set port patch-tun vlan_mode=trunk

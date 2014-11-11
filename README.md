@@ -1,12 +1,11 @@
-Phantom networl manager tool for mannage docker container networks by using ovs
+Phantom tool for mannage docker container network by using Open vSwitch
 ===============================
 Docker networking is fast evolving. There are many options today for
 using Linux bridge, port mapping, Open vSwitch for this purpose. We
 found the need to have a comprehensive mechanism to network all
 applications across hosts with isolation through overlay networking.
-The loris software is an early attempt at providing this framework.
 
-The loris software package allows configuring the networking of individual
+The phantom software package allows configuring the networking of individual
 containers and isolating the network of container groups (i.e., pods).
 The toolkit uses [Open vSwitch](http://openvswitch.org) to provide
 connectivity to containers and creates GRE or VxLAN tunnels to allow containers
@@ -15,7 +14,7 @@ on different hosts to communicate with each other.
 # Running
 you can run the following commands to manage the networks. The toolkit 
 creates virtual networks for each pod (i.e., groups of containers that
-are allowed to reach each other). You will notice that the containers 
+are allowed to reach each other, they are within the same VXLAN). Containers 
 will not be able to communicate across pods.
 
 * Prepare host for container networking
